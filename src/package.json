@@ -1,0 +1,28 @@
+{
+  "name": "nodepop",
+  "version": "1.0.0",
+  "description": "Practica - Glovo Keepcoding Women in Tech Bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jesinug/nodepop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jesinug/nodepop/issues"
+  },
+  "homepage": "https://github.com/Jesinug/nodepop#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
