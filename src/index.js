@@ -10,9 +10,9 @@ require('./database');
 // Asigno la ejecución de la app a una función llamada `main` para poder manejar mejor la asincronía (con async await)
 async function main()
  {
-  // Uso el método .listen() defininiendo: puerto a escuchar (4000)
-  await app.listen(4000);
-  console.log('Server on port 4000');
+  // Uso el método .listen() y le paso el valor de port (definifo en app.js) con el método app.get
+  await app.listen(app.get('port'));
+  console.log('Server on port', app.get('port'));
  }
 
  //* Ejecución de la app
