@@ -6,5 +6,5 @@ const express = require('express');
 // Ejecuto express y asigno lo que me devuelve en constante llamada 'app' (app será el servidor)
 const app = express();
 
-// Exporto mi definición de app (el servidor)
+// Exporto mi definición de app (el servidor) creada con Express
 module.exports = app;
