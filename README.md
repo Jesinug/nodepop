@@ -6,9 +6,10 @@
 - Project created 100% with NodeJS, MongoDB & Express
 - No use of Browser
 - devEnvironment Dependencies: Mongoose, Nodemon, dotenv
+- API calls tested with Postman
 
 #### Challenge's description
-Develop the API that will run on the server of a **second-hand goods selling service** called Nodepop. 
+Develop the API that will run on the server of a **second-hand goods selling service** called **Nodepop**. 
 
 The service maintains ads for buying or selling items and allows you to search as well as filter by various criteria, so the API to be developed should provide the necessary methods for this.
 

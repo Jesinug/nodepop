@@ -2,6 +2,8 @@
 const mongooseConnect = require('mongoose').connect;
 const mongooseConnection = require('mongoose').connection;
 
+
+
 // Creo la constante 'URI' para asignarle el lugar donde MongoDB debe conectarse. Es como decirle: "Mongo, crea una base de datos llamada 'nodeappdb'"
 // 1) Asigno directamente la URI:
       // const URI =  'mongodb://localhost/nodeappdb';

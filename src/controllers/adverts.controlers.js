@@ -1,21 +1,31 @@
 const advertsCtrl = {};
 
-advertsCtrl.getAdverts = (req, res) => {
+const Advert = require('../models/Advert');
+
+advertsCtrl.getAdverts = async (req, res) => {
+  const adverts = await Advert.find();
+  res.json(adverts)
+}
+
+advertsCtrl.createAdvert = async (req, res) => {
+  const { name, isForSale, price, picture, tags } = req.body;
+  const newAdvert = new Advert ({
+    name: name,
+    isForSale: isForSale,
+    price: price,
+    picture: picture,
+    tags: tags
+  })
+  await newAdvert.save();
   res.json({
-    message: []
+    message: 'Your advert is published'
   })
 }
 
 advertsCtrl.getAdvert = (req, res) => 
 {
   res.json({
-    message: 'This is your advert'
-  })
-}
-
-advertsCtrl.createAdvert = (req, res) => {
-  res.json({
-    message: 'Advert is published'
+    message: 'This is the advert you was looking for'
   })
 }
 
