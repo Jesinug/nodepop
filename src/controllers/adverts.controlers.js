@@ -19,10 +19,25 @@ advertsCtrl.getAdverts = async (req, res) => {
   if (name) {
     filterQueries.name = new RegExp('^' + name, "i"); ;  
   }
+
+  const priceMax = req.query.priceMax;
+  const priceMin = req.query.priceMin;
+  if (priceMax && priceMin) {
+    filterQueries.price = {$lt: priceMax, $gt: priceMin}
+  } else if (priceMin) {
+    filterQueries.price = {$gt: priceMin}
+  } else if (priceMax) {
+      filterQueries.price = {$lt: priceMax}
+  }
+
+  const pagLimit = req.query.pagLimit;
+  const pagSkip = req.query.pagSkip;
+  console.log(pagSkip)
+  
   
   console.log("objeto para filtrar: ", filterQueries);
    
-  const adverts = await Advert.list(filterQueries);
+  const adverts = await Advert.list(filterQueries, pagLimit, pagSkip);
 
   res.json(adverts)
 }

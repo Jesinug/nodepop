@@ -9,10 +9,12 @@ const advertSchema = mongoose.Schema({
   tags: [String]
   });
 
-  advertSchema.statics.list = function( filter ) {
-    const query = Advert.find(filter);
+  advertSchema.statics.list = function( filter, pagLimit, pagSkip ) {
+    const query = Advert.find(filter).skip(pagSkip).limit(pagLimit);
     return query.exec();
   }
+
+  
 
   const Advert = mongoose.model('Advert', advertSchema);
 
