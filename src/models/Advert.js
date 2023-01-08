@@ -1,7 +1,7 @@
 // Fichero que definirá de qué modo la base de datos va a estar interactucando con las
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
-const advertSchema = new Schema({
+const advertSchema = mongoose.Schema({
   name: String,
   isForSale: Boolean,
   price: Number,
@@ -9,4 +9,11 @@ const advertSchema = new Schema({
   tags: [String]
   });
 
-  module.exports = model('Advert', advertSchema)
+  advertSchema.statics.list = function( filter ) {
+    const query = Advert.find(filter);
+    return query.exec();
+  }
+
+  const Advert = mongoose.model('Advert', advertSchema);
+
+  module.exports = Advert;

@@ -3,7 +3,27 @@ const advertsCtrl = {};
 const Advert = require('../models/Advert');
 
 advertsCtrl.getAdverts = async (req, res) => {
-  const adverts = await Advert.find();
+  const isForSale = req.query.isForSale;
+  
+  const filterQueries = {};
+  if (isForSale) {
+    filterQueries.isForSale = isForSale;  
+  }
+
+  const tags = req.query.tags
+  if (tags) {
+    filterQueries.tags = {$in: tags};  
+  }
+
+  const name = req.query.name
+  if (name) {
+    filterQueries.name = new RegExp('^' + name, "i"); ;  
+  }
+  
+  console.log("objeto para filtrar: ", filterQueries);
+   
+  const adverts = await Advert.list(filterQueries);
+
   res.json(adverts)
 }
 
