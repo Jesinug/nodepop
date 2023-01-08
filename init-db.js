@@ -3,7 +3,7 @@ const Advert = require('./src/models/Advert');
 
 async function deleteReq(){
   await Advert.deleteMany();
-  console.log(`All adverts has bein deleted`);
+  console.log(`All adverts has been deleted`);
 }
 
 async function insertReq(){
@@ -16,7 +16,7 @@ async function insertReq(){
       tags: [ "lifestyle" ]
     },
     {
-      name: "Barbacoa tipo chulengo. URGE VENTA!",
+      name: "Barbacoa tipo chulengo. URGE VENT!",
       price: 50,
       isForSale: true,
       picture: "nodepop/src/img/barbacoa.png",
@@ -37,7 +37,7 @@ async function insertReq(){
       tags: [ "lifestyle" ]
     },
     {
-      name: "Tienda de campaña para 4 adultos",
+      name: "Tienda de campaña para climas fríos",
       price: 120,
       isForSale: false,
       picture: "nodepop/src/img/tienda-campaña.png",
@@ -47,19 +47,19 @@ async function insertReq(){
       name: "Samsung Galaxy A33 5G, Black, 128 GB",
       price: 300,
       isForSale: true,
-      picture: "nodepop/src/public/img/movil-samsung.png",
+      picture: "nodepop/src/public/img/patines.png",
       tags: [ "mobile" ]
     },
     {
-      name: "MacBook Pro 13\" 4 meses de uso ",
+      name: "MacBook Pro 13\" 4 meses ",
       price: 1300,
       isForSale: true,
-      picture: "nodepop/src/public/img/macbook.png",
-      tags: [ "work" ]
+      picture: "nodepop/src/public/img/patines.png",
+      tags: [ "mobile" ]
     }
 
   ]);
-  console.log(`All existing adverts has bein inserted`);
+  console.log(`All adverts has been inserted`);
 };
 
 async function main() {

@@ -1,4 +1,3 @@
-// Fichero que definirá de qué modo la base de datos va a estar interactucando con las
 const mongoose = require('mongoose');
 
 const advertSchema = mongoose.Schema({
@@ -9,13 +8,15 @@ const advertSchema = mongoose.Schema({
   tags: [String]
   });
 
-  advertSchema.statics.list = function( filter, pagLimit, pagSkip ) {
-    const query = Advert.find(filter).skip(pagSkip).limit(pagLimit);
-    return query.exec();
-  }
+advertSchema.statics.list = function( filter, pagLimit, pagSkip ) {
+  const query = Advert.find(filter).skip(pagSkip).limit(pagLimit);
+  return query.exec();
+}
 
-  
+advertSchema.statics.tags = function(){
+  return Advert.distinct('tags').exec(); 
+}
 
-  const Advert = mongoose.model('Advert', advertSchema);
+const Advert = mongoose.model('Advert', advertSchema);
 
-  module.exports = Advert;
+module.exports = Advert;
