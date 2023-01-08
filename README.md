@@ -1,6 +1,8 @@
 ## Web basics: Javascript from scratch 🧮
-## Backend application - Nodepop, 
+## Backend application - Nodepop, a second-hand e-commerce
 > This is a practice delivery in the frame of the [Glovo-KeepCoding Bootcamp "Women in Tech"](https://keepcoding.io/nuestros-bootcamps/mujeres-glovo/)
+
+### To run application: `npm run dev`
 
 ### General considerations
 - Project created 100% with NodeJS, MongoDB & Express
